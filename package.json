@@ -1,0 +1,34 @@
+{
+  "name": "memory",
+  "version": "1.0.0",
+  "description": "Memory game to applied to a job in modyo",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "watch": "vite build --watch"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itachon/memory.git"
+  },
+  "keywords": [
+    "memory"
+  ],
+  "author": "Pablo Hauri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itachon/memory/issues"
+  },
+  "homepage": "https://github.com/itachon/memory#readme",
+  "dependencies": {
+    "@vitejs/plugin-vue": "^4.3.4",
+    "vite": "^4.4.9",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.29",
+    "tailwindcss": "^3.3.3"
+  }
+}
