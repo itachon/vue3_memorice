@@ -1,72 +1,10 @@
 <style>
-.tick-mark {
-    width: 50%;
-    height: 50%;
-    position: absolute;
-    top: 0;
-    margin: 40px;
+.cls-1 {
+    fill: #0074ff;
 }
 
-.tick-mark::before {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    height: 50%;
-    width: 10px;
-    background-color: #4ff964;
-    content: "";
-    transform: translateX(10px) rotate(-45deg);
-    transform-origin: left bottom;
-}
-
-.tick-mark::after {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 10px;
-    width: 100%;
-    background-color: #4ff964;
-    content: "";
-    transform: translateX(10px) rotate(-45deg);
-    transform-origin: left bottom;
-}
-
-/*incorrecta*/
-
-.tick-error {
-    width: 50%;
-    height: 50%;
-    position: absolute;
-    top: 0;
-    margin: 40px;
-}
-
-.tick-error::before {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    height: 50%;
-    width: 10px;
-    background-color: #fb0000;
-    content: "";
-    transform: translateX(40px) rotate(-45deg);
-    transform-origin: left bottom;
-}
-
-.tick-error::after {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 10px;
-    width: 50%;
-    background-color: #fb0000;
-    content: "";
-    transform: translateX(10px) rotate(-45deg);
-    transform-origin: left bottom;
-}
-
-.hidden {
-    display: none;
+.cls-2 {
+    fill: #ffb300;
 }
 </style>
 <template>
@@ -122,39 +60,7 @@
     </div>
 
 
-    <div id="popup-modal" tabindex="-1"
-        class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-        <div class="relative w-full max-w-md max-h-full">
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                <button type="button"
-                    class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                    data-modal-hide="popup-modal">
-                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 14 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                    </svg>
-                    <span class="sr-only">Close modal</span>
-                </button>
-                <div class="p-6 text-center">
-                    <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                    </svg>
-                    <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete
-                        this product?</h3>
-                    <button data-modal-hide="popup-modal" type="button"
-                        class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                        Yes, I'm sure
-                    </button>
-                    <button data-modal-hide="popup-modal" type="button"
-                        class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">No,
-                        cancel</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <div class="hidden min-w-screen h-screen animated fadeIn faster  fixed  left-0 top-0 flex justify-center items-center inset-0 z-50 outline-none focus:outline-none bg-no-repeat bg-center bg-cover"
         id="modal-id">
         <div class="absolute bg-black opacity-80 inset-0 z-0"></div>
@@ -163,16 +69,15 @@
             <div class="">
                 <!--body-->
                 <div class="text-center p-5 flex-auto justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 -m-1 flex items-center text-red-500 mx-auto"
-                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 flex items-center text-red-500 mx-auto"
-                        viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd"
-                            d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                            clip-rule="evenodd" />
+
+                    <svg width="40px" height="40px" viewBox="0 0 64 64" data-name="Layer 1" id="Layer_1"
+                        xmlns="http://www.w3.org/2000/svg" style="margin-left:46%">
+
+                        <title />
+                        <path class="cls-1"
+                            d="M41.78,57.13a7.12,7.12,0,0,1-4.2-1.39l-4.32-3.16a3.12,3.12,0,0,0-3.7,0l-4.32,3.16a7.14,7.14,0,0,1-11.31-6.53l.58-5.32a3.11,3.11,0,0,0-1.85-3.2L7.77,38.53a7.13,7.13,0,0,1,0-13.06l4.89-2.16a3.11,3.11,0,0,0,1.85-3.2l-.58-5.32A7.14,7.14,0,0,1,25.24,8.26l4.32,3.16a3.12,3.12,0,0,0,3.7,0l4.32-3.16A7,7,0,0,1,43,7a7.25,7.25,0,0,1,4.75,3.13,2,2,0,1,1-3.34,2.2,3.23,3.23,0,0,0-2.12-1.39,3,3,0,0,0-2.37.57l-4.32,3.16a7.13,7.13,0,0,1-8.43,0l-4.31-3.16a3.13,3.13,0,0,0-5,2.87l.58,5.31A7.11,7.11,0,0,1,14.28,27l-4.9,2.16a3.14,3.14,0,0,0,0,5.74L14.28,37a7.11,7.11,0,0,1,4.21,7.3l-.58,5.31a3.13,3.13,0,0,0,5,2.87l4.31-3.16a7.13,7.13,0,0,1,8.43,0l4.32,3.16a3.13,3.13,0,0,0,5-2.87l-.58-5.31A7.1,7.1,0,0,1,48.54,37l4.9-2.16a3.14,3.14,0,0,0,0-5.74L50.78,28a2,2,0,1,1,1.61-3.66l2.66,1.17a7.13,7.13,0,0,1,0,13.06l-4.89,2.16a3.13,3.13,0,0,0-1.86,3.2l.58,5.32a7,7,0,0,1-3.52,6.95A7.17,7.17,0,0,1,41.78,57.13Z" />
+                        <path class="cls-2"
+                            d="M31.64,39a2,2,0,0,1-1.42-.59l-8.61-8.61A2,2,0,1,1,24.44,27l7.2,7.2L57.08,8.72a2,2,0,0,1,2.82,2.83L33.05,38.4A2,2,0,0,1,31.64,39Z" />
                     </svg>
                     <h3 class="text-xl font-bold py-4 ">CONGRATULATIONS</h3>
                     <p class="text-sm text-gray-500 px-8">You have complete the memory game Whit the score of {{ points }}
@@ -182,7 +87,7 @@
                 <div class="p-3  mt-2 text-center space-x-4 md:block">
 
                     <button
-                        class="mb-2 md:mb-0 bg-red-500 border border-red-500 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:bg-red-600">ACEPTAR</button>
+                        class="mb-2 md:mb-0 bg-green-500 border border-green-500 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:bg-green-600">ACEPTAR</button>
                 </div>
             </div>
         </div>

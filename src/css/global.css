@@ -61,3 +61,72 @@ img {
 .rotateactive .back img {
     border: 3px solid #9ee978;
 }
+.tick-mark {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    margin: 40px;
+}
+
+.tick-mark::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 50%;
+    width: 10px;
+    background-color: #4ff964;
+    content: "";
+    transform: translateX(10px) rotate(-45deg);
+    transform-origin: left bottom;
+}
+
+.tick-mark::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 10px;
+    width: 100%;
+    background-color: #4ff964;
+    content: "";
+    transform: translateX(10px) rotate(-45deg);
+    transform-origin: left bottom;
+}
+
+/*incorrecta*/
+
+.tick-error {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    margin: 40px;
+}
+
+.tick-error::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 50%;
+    width: 10px;
+    background-color: #fb0000;
+    content: "";
+    transform: translateX(40px) rotate(-45deg);
+    transform-origin: left bottom;
+}
+
+.tick-error::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 10px;
+    width: 50%;
+    background-color: #fb0000;
+    content: "";
+    transform: translateX(10px) rotate(-45deg);
+    transform-origin: left bottom;
+}
+
+.hidden {
+    display: none;
+}
