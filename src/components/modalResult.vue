@@ -33,4 +33,11 @@
         </div>
     </div>
 </template>
-<script></script>
+<script setup>
+const props = defineProps(['username','points','errors'])
+const emits = defineEmits(['restartgame'])
+
+const restart = () => {
+    emits('restartgame')
+}
+</script>

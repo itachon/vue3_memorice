@@ -30,4 +30,15 @@
         </div>
     </div>
 </template>
-<script></script>
+<script setup>
+import { ref, watch } from 'vue';
+import { asignado } from '../composables/functions.js'
+const { iniciar } = asignado(props.selAll, props.selOne, props.carts);
+const props = defineProps(['carts', 'selAll', 'selOne'])
+const username = ref('')
+//emites
+const emits = defineEmits(['updateusername'])
+watch(username, async (newUsername, oldUsername) => {
+    emits('updateusername', newUsername)
+})
+</script>

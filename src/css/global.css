@@ -1,110 +1,111 @@
-
 .flip-container {
     perspective: 1000px;
     width: 200px;
     height: 200px;
 }
+
 .flipper {
     width: 208px;
     height: 208px;
     transform-style: preserve-3d;
     transition: transform 0.2s;
 }
-.front {
+
+.card {
     width: 208px;
     height: 208px;
     position: absolute;
+}
+
+.card--front {
     backface-visibility: hidden;
 }
-.back {
-    width: 208px;
-    height: 208px;
-    position: absolute;
+
+.card--back {
     transform: rotateY(180deg);
     backface-visibility: hidden;
 }
-.back img {
+
+
+.card--back img {
     border: 3px solid #000000;
 }
+
 img {
     width: 208px;
     height: 208px !important;
     max-width: 140px !important;
 }
+
 .rotate {
     transform: rotateY(180deg);
 }
+
 .rotateactive {
     transform: rotateY(180deg);
 }
-.rotateactive .back img {
+
+.rotateactive .card--back img {
     border: 3px solid #9ee978;
 }
-.tick-mark {
+
+/* TICK BASIC*/
+.tick {
     width: 50%;
     height: 50%;
     position: absolute;
     top: 0;
     margin: 40px;
 }
-.tick-mark::before {
+
+.tick::before {
     position: absolute;
     left: 0;
     top: 50%;
     height: 50%;
     width: 10px;
-    background-color: #4ff964;
-    content: "";
-    transform: translateX(10px) rotate(-45deg);
     transform-origin: left bottom;
+    content: "";
 }
-.tick-mark::after {
+
+.tick::after {
     position: absolute;
     left: 0;
     bottom: 0;
     height: 10px;
+    transform-origin: left bottom;
+    transform-origin: left bottom;
+}
+
+/* TICK CORRECT */
+.tick-mark::before {
+    background-color: #4ff964;
+    transform: translateX(10px) rotate(-45deg);
+}
+
+.tick-mark::after {
     width: 100%;
     background-color: #4ff964;
     content: "";
     transform: translateX(10px) rotate(-45deg);
-    transform-origin: left bottom;
 }
 
-/*incorrecta*/
-
-.tick-error {
-    width: 50%;
-    height: 50%;
-    position: absolute;
-    top: 0;
-    margin: 40px;
-}
+/* TICK INCORRECT */
 
 .tick-error::before {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    height: 50%;
-    width: 10px;
     background-color: #fb0000;
-    content: "";
     transform: translateX(40px) rotate(-45deg);
-    transform-origin: left bottom;
 }
 
 .tick-error::after {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 10px;
     width: 50%;
     background-color: #fb0000;
     content: "";
     transform: translateX(10px) rotate(-45deg);
-    transform-origin: left bottom;
+    
 }
 
-
+/* SVG CLASSES */
 .cls-1 {
     fill: #0074ff;
 }
