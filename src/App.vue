@@ -58,7 +58,7 @@ const selOne = document.querySelector.bind(document)
 import { asignado } from './composables/functions.js'
 import { apiCards } from './composables/api.js'
 const { apicards, carts } = apiCards()
-const { asignar, seleccionadas, points, errors, iniciar, restart } = asignado(selAll, selOne, carts);
+const { asignar, selectedcards, points, errors, start, restart } = asignado(selAll, selOne, carts);
 
 //COMPONENTES
 
@@ -72,6 +72,6 @@ const updateUsername = (newUsername) => {
 
 onMounted(() => {
     apicards()
-    selOne('#inicio').classList.remove('hidden')
+    selOne('#modalStart').classList.remove('hidden')
 })
 </script>

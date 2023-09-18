@@ -5,7 +5,7 @@ import { ref } from 'vue';
 export function asignado(selAll, selOne, carts) {
 
 
-    const seleccionadas = ref([])
+    const selectedcards = ref([])
     const points = ref(0)
     const errors = ref(0)
     const exito = ref(false)
@@ -14,7 +14,7 @@ export function asignado(selAll, selOne, carts) {
 
         if (!event.target.classList.contains('rotate')) {
 
-            let elementos = seleccionadas.value.push(event.target.id)
+            let elementos = selectedcards.value.push(event.target.id)
 
             if (elementos == 2) {
                 event.target.classList.toggle('rotate')
@@ -27,10 +27,10 @@ export function asignado(selAll, selOne, carts) {
                     selAll('.rotateactive .card--back .tick-mark').forEach(item => item.classList.remove('hidden'))
 
 
-                    seleccionadas.value = []
+                    selectedcards.value = []
                     points.value++
-                    if (points.value == 2) {
-                        selOne('#modal-id').classList.remove('hidden')
+                    if (points.value == 20) {
+                        selOne('#modalResult').classList.remove('hidden')
                     }
                 } else {
                     errors.value++
@@ -39,7 +39,7 @@ export function asignado(selAll, selOne, carts) {
                         selAll('.rotate .card--back .tick-error').forEach(item => item.classList.add('hidden'))
                         selAll('.rotate').forEach(item => item.classList.remove('rotate'))
 
-                        seleccionadas.value = []
+                        selectedcards.value = []
 
                     }, 1000);
                 }
@@ -52,8 +52,8 @@ export function asignado(selAll, selOne, carts) {
     };
 
     const comprobar = () => {
-        if (seleccionadas.value.length == 2) {
-            exito.value = seleccionadas.value.reduce((acc, ant) => {
+        if (selectedcards.value.length == 2) {
+            exito.value = selectedcards.value.reduce((acc, ant) => {
                 return acc == ant ? true : false
             })
         } else {
@@ -61,8 +61,8 @@ export function asignado(selAll, selOne, carts) {
         }
 
     }
-    const iniciar = () => {
-        selOne('#inicio').classList.add('hidden')
+    const start = () => {
+        selOne('#modalStart').classList.add('hidden')
 
     }
     const restart = () => {
@@ -74,7 +74,7 @@ export function asignado(selAll, selOne, carts) {
         selAll('.rotate .card--back .tick-mark').forEach(item => item.classList.add('hidden'))
         selAll('.rotate').forEach(item => item.classList.remove('rotate'))
 
-        seleccionadas.value = []
+        selectedcards.value = []
         points.value = 0
         errors.value = 0
         setTimeout(() => {
@@ -84,11 +84,11 @@ export function asignado(selAll, selOne, carts) {
         }, 1000);
 
 
-        selOne('#modal-id').classList.add('hidden')
+        selOne('#modalResult').classList.add('hidden')
     }
 
 
-    return { asignar, seleccionadas, points, errors, iniciar, restart }
+    return { asignar, selectedcards, points, errors, start, restart }
 }
 
 

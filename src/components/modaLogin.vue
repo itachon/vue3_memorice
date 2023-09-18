@@ -1,7 +1,7 @@
 <style></style>
 <template>
     <div class="hidden min-w-screen h-screen animated fadeIn faster  fixed  left-0 top-0 flex justify-center items-center inset-0 z-50 outline-none focus:outline-none bg-no-repeat bg-center bg-cover"
-        id="inicio">
+        id="modalStart">
         <div class="absolute bg-black opacity-80 inset-0 z-0"></div>
         <div class="w-full  max-w-lg p-5 relative mx-auto my-auto rounded-xl shadow-lg  bg-white ">
             <!--content-->
@@ -24,7 +24,7 @@
 
                     <button
                         class="mb-2 md:mb-0 bg-green-500 border border-green-500 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:bg-green-600"
-                        @click="iniciar">INICIAR</button>
+                        @click="start">start</button>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
 <script setup>
 import { ref, watch } from 'vue';
 import { asignado } from '../composables/functions.js'
-const { iniciar } = asignado(props.selAll, props.selOne, props.carts);
+const { start } = asignado(props.selAll, props.selOne, props.carts);
 const props = defineProps(['carts', 'selAll', 'selOne'])
 const username = ref('')
 //emites
