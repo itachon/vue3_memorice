@@ -13,39 +13,41 @@ export function asignado(selAll, selOne, carts) {
 
 
         if (!event.target.classList.contains('rotate')) {
+            if (!event.target.classList.contains('rotateactive')) {
+                let elementos = selectedcards.value.push(event.target.id)
 
-            let elementos = selectedcards.value.push(event.target.id)
-
-            if (elementos == 2) {
-                event.target.classList.toggle('rotate')
-                comprobar()
-                if (exito.value) {
-                    selAll('.rotate').forEach(item => item.classList.add('rotateactive'))
-                    selAll('.rotate').forEach(item => item.classList.remove('rotate'))
-
-
-                    selAll('.rotateactive .card--back .tick-mark').forEach(item => item.classList.remove('hidden'))
-
-
-                    selectedcards.value = []
-                    points.value++
-                    if (points.value == 20) {
-                        selOne('#modalResult').classList.remove('hidden')
-                    }
-                } else {
-                    errors.value++
-                    selAll('.rotate .card--back .tick-error').forEach(item => item.classList.remove('hidden'))
-                    setTimeout(() => {
-                        selAll('.rotate .card--back .tick-error').forEach(item => item.classList.add('hidden'))
+                if (elementos == 2) {
+                    event.target.classList.toggle('rotate')
+                    comprobar()
+                    if (exito.value) {
+                        selAll('.rotate').forEach(item => item.classList.add('rotateactive'))
                         selAll('.rotate').forEach(item => item.classList.remove('rotate'))
 
-                        selectedcards.value = []
 
-                    }, 1000);
+                        selAll('.rotateactive .card--back .tick-mark').forEach(item => item.classList.remove('hidden'))
+
+
+                        selectedcards.value = []
+                        points.value++
+                        if (points.value == 20) {
+                            selOne('#modalResult').classList.remove('hidden')
+                        }
+                    } else {
+                        errors.value++
+                        selAll('.rotate .card--back .tick-error').forEach(item => item.classList.remove('hidden'))
+                        setTimeout(() => {
+                            selAll('.rotate .card--back .tick-error').forEach(item => item.classList.add('hidden'))
+                            selAll('.rotate').forEach(item => item.classList.remove('rotate'))
+
+                            selectedcards.value = []
+
+                        }, 1000);
+                    }
+                } else if (elementos < 2) {
+                    event.target.classList.toggle('rotate')
                 }
-            } else if (elementos < 2) {
-                event.target.classList.toggle('rotate')
             }
+
         }
 
 
