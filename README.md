@@ -32,3 +32,5 @@ An Ubuntu 18.04 docker was created, in which Nodejs and npm were installed for p
 ## For some reason if its required to expose the server 
  command "npm run dev -- --host"
 
+## VERSION ALPHA
+v0.0.1
