@@ -17,6 +17,11 @@
                     <li>
                         ERRORS : {{ errors }}
                     </li>
+                    <li>
+                        <button
+                            class="mb-2 md:mb-0 bg-red-500 border border-red-500 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:bg-red-600"
+                            @click="restart">REINICIAR</button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -27,7 +32,7 @@
                 <li class="flex items-center flex-col p-1" v-for="(intervalue, index) in carts" :key="index">
 
                     <div class="flip-container">
-                        <div class="flipper" ref="target" :id="intervalue.fields.image.uuid" @click.stop="asignar">
+                        <div class="flipper" ref="target" :id="intervalue.fields.image.uuid" @click.stop="assign">
                             <div class="card card--front" style="pointer-events: none;">
                                 <img src="https://i.pinimg.com/564x/a5/57/f0/a557f07c5d658b156edecfee645cd851.jpg"
                                     alt="Imagen 1">
@@ -55,10 +60,10 @@ const selOne = document.querySelector.bind(document)
 
 //EMIS
 //COMPOSABLE
-import { asignado } from './composables/functions.js'
+import { assigned } from './composables/functions.js'
 import { apiCards } from './composables/api.js'
 const { apicards, carts } = apiCards()
-const { asignar, selectedcards, points, errors,  restart } = asignado(selAll, selOne, carts);
+const { assign, selectedcards, points, errors, restart } = assigned(selAll, selOne, carts);
 
 //COMPONENTES
 

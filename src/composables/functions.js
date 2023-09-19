@@ -2,14 +2,14 @@ import { ref } from 'vue';
 
 
 
-export function asignado(selAll, selOne, carts) {
+export function assigned(selAll, selOne, carts) {
 
 
     const selectedcards = ref([])
     const points = ref(0)
     const errors = ref(0)
     const exito = ref(false)
-    const asignar = (event) => {
+    const assign = (event) => {
 
 
         if (!event.target.classList.contains('rotate')) {
@@ -87,7 +87,7 @@ export function asignado(selAll, selOne, carts) {
     }
 
 
-    return { asignar, selectedcards, points, errors, restart }
+    return { assign, selectedcards, points, errors, restart }
 }
 
 
