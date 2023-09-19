@@ -51,6 +51,8 @@ const start = () => {
         props.selOne('#alert-msg').classList.remove('hidden')
     }
 
+    localStorage.setItem('username', username.value)
+
 
 }
 </script>

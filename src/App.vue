@@ -69,7 +69,7 @@ const { assign, selectedcards, points, errors, restart } = assigned(selAll, selO
 
 import ModalLogin from './components/modaLogin.vue'
 import ModalResult from './components/modalResult.vue'
-const username = ref('')
+const username = ref(localStorage.getItem('username'))
 
 const updateUsername = (newUsername) => {
     username.value = newUsername
@@ -77,6 +77,10 @@ const updateUsername = (newUsername) => {
 
 onMounted(() => {
     apicards()
-    selOne('#modalStart').classList.remove('hidden')
+    console.log(localStorage.getItem('username'))
+    if (localStorage.getItem('username') == undefined || localStorage.getItem('username') == '') {
+        selOne('#modalStart').classList.remove('hidden')
+    }
+
 })
 </script>
