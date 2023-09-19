@@ -63,10 +63,7 @@ export function asignado(selAll, selOne, carts) {
         }
 
     }
-    const start = () => {
-        selOne('#modalStart').classList.add('hidden')
-
-    }
+   
     const restart = () => {
         selAll('.rotateactive').forEach(item => item.classList.add('rotate'))
         selAll('.rotateactive').forEach(item => item.classList.remove('rotateactive'))
@@ -90,7 +87,7 @@ export function asignado(selAll, selOne, carts) {
     }
 
 
-    return { asignar, selectedcards, points, errors, start, restart }
+    return { asignar, selectedcards, points, errors, restart }
 }
 
 

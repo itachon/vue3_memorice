@@ -17,6 +17,7 @@
                         <input
                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             id="username" v-model="username" type="text" placeholder="Username">
+                        <small id="alert-msg" class="hidden">This field is required</small>
                     </div>
                 </div>
                 <!--footer-->
@@ -32,8 +33,6 @@
 </template>
 <script setup>
 import { ref, watch } from 'vue';
-import { asignado } from '../composables/functions.js'
-const { start } = asignado(props.selAll, props.selOne, props.carts);
 const props = defineProps(['carts', 'selAll', 'selOne'])
 const username = ref('')
 //emites
@@ -41,4 +40,17 @@ const emits = defineEmits(['updateusername'])
 watch(username, async (newUsername, oldUsername) => {
     emits('updateusername', newUsername)
 })
+
+const start = () => {
+    if (username.value != '') {
+        if (props.selOne('#alert-msg').classList.contains('hidden')) {
+            props.selOne('#alert-msg').classList.remove('hidden')
+        }
+        props.selOne('#modalStart').classList.add('hidden')
+    } else {
+        props.selOne('#alert-msg').classList.remove('hidden')
+    }
+
+
+}
 </script>

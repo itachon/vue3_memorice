@@ -29,7 +29,7 @@
                     <div class="flip-container">
                         <div class="flipper" ref="target" :id="intervalue.fields.image.uuid" @click.stop="asignar">
                             <div class="card card--front" style="pointer-events: none;">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Card_back_01.svg"
+                                <img src="https://i.pinimg.com/564x/a5/57/f0/a557f07c5d658b156edecfee645cd851.jpg"
                                     alt="Imagen 1">
                             </div>
                             <div class="card card--back" style="pointer-events: none;">
@@ -58,7 +58,7 @@ const selOne = document.querySelector.bind(document)
 import { asignado } from './composables/functions.js'
 import { apiCards } from './composables/api.js'
 const { apicards, carts } = apiCards()
-const { asignar, selectedcards, points, errors, start, restart } = asignado(selAll, selOne, carts);
+const { asignar, selectedcards, points, errors,  restart } = asignado(selAll, selOne, carts);
 
 //COMPONENTES
 

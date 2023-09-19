@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "watch": "vite build --watch"
-    
   },
   "repository": {
     "type": "git",
