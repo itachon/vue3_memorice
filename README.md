@@ -1,9 +1,19 @@
-# memory game to modyo´s apply
+# Memory game to modyo´s apply
+## Descripcion ES/ENG
 
-# At first step you need to install npm packages
- command - npm i
-# When the installation its over there is a last step, excecute vite´s server
- command npm run dev
+Famoso juego de memorice
 
-# for some reason if its required expose the server 
- command npm run dev -- --host
+Famous memory game
+
+### RULES
+Find the pair of the animal clicking in the cards, complete de game with 20 points and theleast number of error
+
+good luck
+
+## At first step you need to install npm packages
+ command - "npm i"
+## When the installation its over there is a last step, excecute vite´s server
+ command - "npm run dev"
+
+## For some reason if its required to expose the server 
+ command "npm run dev -- --host"
