@@ -13,6 +13,9 @@ good luck
 ## Method used
 An Ubuntu 18.04 docker was created, in which Nodejs and npm were installed for package management, I synchronized the file as a volume in the /home/node path, when I created or edited the code it was automatically synchronized, within this folder i executed the following commands
 
+NODEJS 18.17.1
+NPM 9.6.7
+
 ## Folder
  Change to the folder "memory"
 
