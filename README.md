@@ -6,7 +6,7 @@ Famoso juego de memorice
 Famous memory game
 
 ### RULES
-Find the pair of the animal clicking in the cards, complete de game with 20 points and theleast number of error
+Find the pair of the animal by clicking in the cards, complete de game with 20 points and the least number of errors
 
 good luck
 
