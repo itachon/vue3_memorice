@@ -116,3 +116,6 @@ img {
 .cls-2 {
     fill: #ffb300;
 }
+.text-xs{
+    line-height: 0.25em !important;
+}
