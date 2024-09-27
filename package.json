@@ -22,6 +22,7 @@
   "homepage": "https://github.com/itachon/memory#readme",
   "dependencies": {
     "@vitejs/plugin-vue": "^4.3.4",
+    "animate.css": "^4.1.1",
     "vite": "^4.4.9",
     "vue": "^3.3.4"
   },
